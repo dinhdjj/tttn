@@ -1,0 +1,29 @@
+Yêu cầu hệ thống:
+	- Chạy hệ điều hành Ubuntu >= 20
+	- Docker >= 20
+	- Docker compose >= 2
+
+Các bước cài đặt:
+	B1: giải nén source code và cd vào source code
+	B2: chạy "bin/start --no-dev"
+	B3: chạy "bin/copytocontainer --all"
+	B4: chạy "bin/mysql -u root < ./database.sql"
+	B5: chạy "bin/composer i"
+		- Nhập username và password lần lượt như sau nếu được yêu cầu
+		- Username: ce0134eee1148ef13bef6c39a15b375f
+		- Password: 22dacd1a3f7ab6b5c1e9b3d049fb01de
+	B6: chạy "bin/setup"
+	B6: chạy "bin/magento module:disable Magento_TwoFactorAuth"
+	B7: truy cập https://magento.test trên trình duyệt cho trang customer
+		https://magento.test/admin cho trang admin
+
+Chạy dự án sau khi cài đặt
+	B1: cd vào source code
+	B2: chạy "bin/start"
+		- "bin/stop" nếu muốn dừng
+
+Tài khoản admin: dinhdjj 
+Mật khẩu admin: password123
+
+Tài khoản customer: customer@example.com
+Mật khẩu customer: password123@
