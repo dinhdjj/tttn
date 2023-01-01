@@ -1,0 +1,24 @@
+<div class="block block-dashboard-info">
+    <div class="block-title"><strong><?php echo __('Profile Picture'); ?></strong></div>
+    <div class="block-content">
+        <div class="box box-information">
+            <strong class="box-title">
+                <span><?php echo __('Profile Picture'); ?></span>
+            </strong>
+            <div class="box-content">
+                <?php $avatarFile = !empty($block->getCustomer()->getCustomAttribute('profile_picture')) ? $block->getLayout()->createBlock('\Magenest\Movie\Block\Customer\Attributes\Avatar')->checkImageFile(base64_encode($block->getCustomer()->getCustomAttribute('profile_picture')->getValue())) : false; ?>
+                <?php $avatar = ($avatarFile) ? $block->getUrl('magenest/avatar/view/', ['image' => base64_encode($block->getCustomer()->getCustomAttribute('profile_picture')->getValue())]) : $block->getViewFileUrl('Magenest_Movie::images/no-profile-photo.jpg');?>
+                <img src="<?php echo $avatar; ?>" width="150">
+            </div>
+            <?php
+                echo $block->getCustomer()->getFirstname().' '.$block->getCustomer()->getLastname();
+            ?>
+            <div>
+                <?php  $isCustomerb2b = !empty($block->getCustomer()->getCustomAttribute('is_customer_b2b')) ? $block->getCustomer()->getCustomAttribute('is_customer_b2b')->getValue() : '' ?>
+                <?php if($isCustomerb2b==1):?>
+                    <h3>Is Customer B2B</h3>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</div>

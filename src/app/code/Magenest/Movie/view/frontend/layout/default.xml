@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magenest_Movie::css/global-avatar.css"/>
+    </head>
+    <body>
+        <referenceBlock name="footer_links">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="movie-link">
+                <arguments>
+                    <argument name="label" translate="true" xsi:type="string">Movie page</argument>
+                    <argument name="path" xsi:type="string">magenest/movie/index</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="modal-link">
+                <arguments>
+                    <argument name="label" translate="true" xsi:type="string">Modal</argument>
+                    <argument name="path" xsi:type="string">magenest/modal/index</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
+<!--        Avatar Customer-->
+        <referenceBlock name="customer">
+            <action method='setTemplate'>
+                <argument name='template' xsi:type='string'>Magenest_Movie::customer/account/avatarNav.phtml</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>
